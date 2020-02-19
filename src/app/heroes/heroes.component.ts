@@ -22,6 +22,10 @@ export class HeroesComponent implements OnInit {
     this.hero.name = '';
   }
 
+  selectedHero: Hero;
+  onSelect(hero: Hero):void {
+    this.selectedHero = hero;
+}
   //hero = 'Windstorm';
 
   constructor() { }
