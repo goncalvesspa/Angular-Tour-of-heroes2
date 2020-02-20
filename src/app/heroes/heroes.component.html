@@ -4,13 +4,22 @@
 <div><span>id: </span>{{hero.id}}</div>
 <div><span>name: </span>{{hero.name}}</div> -->
 
-<h2>My Heroes</h2>
 
+<h2>My Heroes</h2>
 <ul class="heroes">
-    <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </li>
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
 </ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+
+
+<!-- {{ selectedHero.name }} -->
+
 
 
 
@@ -20,7 +29,6 @@
     </label>
   </div>
  -->
-
 
 
 <!-- <input tipe = txt  ><br> -->
